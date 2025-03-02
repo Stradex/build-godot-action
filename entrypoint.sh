@@ -31,6 +31,9 @@ then
 else
     BUILD_PATH="$GITHUB_WORKSPACE/build/"
 fi
+
+ls -a $BUILD_PATH
+
 echo build=$BUILD_PATH >> $GITHUB_OUTPUT
 
 
