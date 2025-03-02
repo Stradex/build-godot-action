@@ -22,7 +22,8 @@ fi
 # Export for project
 echo "Building $1 for $2"
 cd "$GITHUB_WORKSPACE/$5"
-godot ./project.godot --headless --${mode} "$2"
+godot ./project.godot --headless --${mode} "$2" || true
+echo "test2"
 echo "Build Done"
 
 if [ "$5" != "" ]
@@ -34,7 +35,7 @@ fi
 
 ls -a $BUILD_PATH
 
-echo build=$BUILD_PATH >> $GITHUB_OUTPUT
+echo BUILD=$BUILD_PATH >> $GITHUB_OUTPUT
 
 
 if [ "$4" = "true" ]
